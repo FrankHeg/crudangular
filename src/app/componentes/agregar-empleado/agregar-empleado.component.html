@@ -5,21 +5,27 @@
     </div>
   
     <div class="card-body">        
-        <form [formGroup]="formularioDeEmpleados"(ngSubmit)="enviarDatos()" >
+        <form [formGroup]="formularioDeEmpleados" (ngSubmit)="enviarDatos()" >
             <div class="mb-3">
-              <label for="" class="form-label">Nombre</label>
+              <label for="" class="form-label">Nombre: </label>
               <input type="text"
-                class="form-control" name="" form="" formControlName="nombre" aria-describedby="helpId" placeholder="Escribe tu nombre">           
+                class="form-control" name="" form="" formControlName="nombre" id="" aria-describedby="helpId" placeholder="Escribe tu nombre">           
             </div>
+
+
             <div class="mb-3">
-              <label for="" class="form-label">Correo</label>
+              <label for="" class="form-label">Correo: </label>
               <input type="email"
-                class="form-control" name="" formControlName="Correo" id="" aria-describedby="helpId" placeholder="Escribe tu correo">             
+                class="form-control" name="" formControlName="correo" id="" aria-describedby="helpId" placeholder="Escribe tu correo">             
             </div>
+
+
             <div class="btn-group" role="group" aria-label="">
-                <button type="button" class="btn btn-primary">Agregar</button>
+
+                <button type="submit" class="btn btn-primary">Agregar</button>
+
                 <button type="button" class="btn btn-danger">Cancelar</button>            
             </div>
         </form>
-    </div>
+   </div>
 </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormBuilder, Form } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
+
+import { CrudService } from 'src/app/servicio/crud.service';
 
 
 @Component({
@@ -8,20 +10,37 @@ import { FormGroup,FormBuilder, Form } from '@angular/forms';
   styleUrls: ['./agregar-empleado.component.css']
 })
 export class AgregarEmpleadoComponent implements OnInit {
-  formularioDeEmpleados:FormGroup;
 
-  constructor(public formulario:FormBuilder) { 
+   formularioDeEmpleados:FormGroup;
+
+
+  constructor(
+    public formulario:FormBuilder,
+    private crudService:CrudService
+    
+    ){ 
     this.formularioDeEmpleados=this.formulario.group({
       nombre:[''],
       correo:['']
     });
   }
+  
+  //--constructor(public formulario:FormBuilder) { 
+    
+    //this.formularioDeEmpleados=this.formulario.group({
+      //nombre:[''],
+      //correo:['']
+    //});
+  //}
 
   ngOnInit(): void {
   }
-  enviarDatos():any {
-    console.log("Me presionaste ");
+  enviarDatos():any{
+    console.log("Me presionaste");
     console.log(this.formularioDeEmpleados.value);
+
+    this.crudService.AgregarEmpleado(this.formularioDeEmpleados.value).subscribe();
   }
+  
 
 }
