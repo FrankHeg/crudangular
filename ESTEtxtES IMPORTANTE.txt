@@ -1,0 +1,3 @@
+copiar la carpeta empleados en la carpeta de aplicaciones, xampp\htdocs
+
+"C:\xampp\htdocs\empleados" 
