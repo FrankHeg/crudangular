@@ -8,11 +8,26 @@ import { Empleado } from './Empleado';
   providedIn: 'root'
 })
 export class CrudService {
-   API: string='http://localhost/empleados/';
+   API: string='http://localhost/empleados/'; // api de php CRUD (API)
 
-  constructor(private clientetHttp:HttpClient) { }
+  constructor(private clienteHttp:HttpClient) { }
 
   AgregarEmpleado(datosEmpleado:Empleado):Observable<any>{
-    return this.clientetHttp.post(this.API+"?insertar=1",datosEmpleado);
+    return this.clienteHttp.post(this.API+"?insertar=1",datosEmpleado);
+  }
+
+  ObtenerEmpleados(){
+    return this.clienteHttp.get(this.API);
+  }
+  BorrarEmpleado(id:any):Observable<any>{
+    return this.clienteHttp.get(this.API+"?borrar="+id);
+
+  }
+  ObtenerEmpleado(id:any):Observable<any>{
+    return this.clienteHttp.get(this.API+"?consultar="+id);
+  }
+  
+  EditarEmpleado(id:any, datosEmpleado:any):Observable<any>{
+    return this.clienteHttp.post(this.API+"?actualizar="+id,datosEmpleado);
   }
 }
