@@ -22,8 +22,13 @@ export class AgregarEmpleadoComponent implements OnInit {
     
     ){ 
     this.formularioDeEmpleados=this.formulario.group({
+      rut:[''],
       nombre:[''],
-      correo:['']
+      apellido:[''],
+      correo:[''],
+      celular:[''],
+      username:[''],
+      contrasena:['']
     });
   }
   

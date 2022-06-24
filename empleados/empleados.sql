@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 13-04-2021 a las 18:43:36
--- Versión del servidor: 10.4.18-MariaDB
--- Versión de PHP: 8.0.3
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 23-06-2022 a las 23:32:14
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,15 +30,20 @@ SET time_zone = "+00:00";
 CREATE TABLE `empleados` (
   `id` int(11) NOT NULL,
   `nombre` varchar(255) NOT NULL,
-  `correo` varchar(255) NOT NULL
+  `correo` varchar(255) NOT NULL,
+  `contrasena` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `empleados`
 --
 
-INSERT INTO `empleados` (`id`, `nombre`, `correo`) VALUES
-(65, 'Oscar', 'oscaruh@develoteca.com');
+INSERT INTO `empleados` (`id`, `nombre`, `correo`, `contrasena`) VALUES
+(77, 'frank', 'asd@asd', NULL),
+(78, 'asd', 'asd@asd', NULL),
+(79, 'Frank', 'frank@gmail.com', NULL),
+(80, 'Fito', 'Fito@gmail.com', NULL),
+(81, 'fito2', 'fito2q@gmail.com', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -58,7 +63,7 @@ ALTER TABLE `empleados`
 -- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

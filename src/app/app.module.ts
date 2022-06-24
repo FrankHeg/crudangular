@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AgregarEmpleadoComponent } from './componentes/agregar-empleado/agregar-empleado.component';
 import { EditarEmpleadoComponent } from './componentes/editar-empleado/editar-empleado.component';
 import { ListarEmpleadoComponent } from './componentes/listar-empleado/listar-empleado.component';
+import { LoginServiceService } from './componentes/login-services/login-services.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
@@ -24,8 +25,11 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
+    
   ],
-  providers: [],
+  providers: [
+    LoginServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
